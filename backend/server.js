@@ -36,6 +36,10 @@ app.post("/entries", async (req, res) => {
   io.emit("entriesUpdated");
   res.json(entry);
 });
+app.get("/", (req, res) => {
+  res.send("🚀 CodeSync backend is running successfully!");
+});
+
 
 // Socket connection
 io.on("connection", (socket) => {
